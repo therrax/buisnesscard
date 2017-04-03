@@ -78,7 +78,7 @@ function showSplash() {
 }
 
 function Contacts(contacts) {
-    var list = null;
+    let list;
     for (var i = 0; i < contacts.length; i++) {
         list += "Nazwa: " + contacts[i].displayName + " - " + contacts[i].phoneNumbers;
     }
