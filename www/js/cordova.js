@@ -2,18 +2,19 @@ function init() {
     document.addEventListener("deviceready", onDeviceReady, false);
     document.addEventListener("online", onOnline, false);
     document.addEventListener("offline", onOffline, false);
+
 }
 function onDeviceReady() {
     navigator.notification.beep(1);
 
-    var options = { frequency: 500 };  // Update every 3 seconds
+    var options = { frequency: 3000 };  // Update every 3 seconds
 
     var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
 
-function stopA() {
-    navigator.accelerometer.clearWatch(watchID);
-}
+//function stopA() {
+//    navigator.accelerometer.clearWatch(watchID);
+//}
 function deviceInfo() {
     info = 'Hi, I am your smartphone :-)' +
         '\n' + '=====' + '\n' + 'Device Name    : ' + device.name +
@@ -46,22 +47,22 @@ function onOffline() {
     navigator.notification.alert("Offline");
 }
 function onSuccess(acceleration) {
-    var accelerometer = document.querySelector("#accelerometer")
+
     navigator.notification.alert('Acceleration X: ' +
         acceleration.x +
-        '<br/>' +
+        '\n' +
         'Acceleration Y: ' +
         acceleration.y +
-        '<br/>' +
+        '\n' +
         'Acceleration Z: ' +
         acceleration.z +
-        '<br/>' +
+        '\n' +
         'Timestamp: ' +
         acceleration.timestamp +
-        '<br/>'
+        '\n'
     );
 }
 
 function onError() {
-    alert('onError!');
+    navigator.notification.alert('onError!');
 }
