@@ -5,6 +5,15 @@ function init() {
 }
 function onDeviceReady() {
     navigator.notification.beep(1);
+
+    function startA() {
+        var options = { frequency: 500 };  // Update every 3 seconds
+
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    }
+    function stopA() {
+        navigator.accelerometer.clearWatch(watchID);
+    }
 }
 function deviceInfo() {
     info = 'Hi, I am your smartphone :-)' +
@@ -51,12 +60,4 @@ function onSuccess(acceleration) {
 
 function onError() {
     alert('onError!');
-}
-function startA(){
-var options = { frequency: 500 };  // Update every 3 seconds
-
-var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-}
-function stopA() {
-    navigator.accelerometer.clearWatch(watchID);
 }
