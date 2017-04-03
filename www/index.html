@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
     
+    <script src="js/jquery-3.2.0.min.js"></script>
     <script src="js/pgb.js"></script>
     <script src="cordova.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -27,30 +28,31 @@
 <h3> II. Wizytówka</h3>
 <div style="height: 40px;"></div>
 
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <h4 class="panel-title">BuisnessCard</h4>
-        </div>
-        <div class="panel-body">
-            <h4><b>Imię i nazwisko:</b> Jerzy Kołakowski<br /></h4>
-            <h4><b>Adres email:</b> therrax@gmail.com<br /></h4>
-            <h4><b>Telefon: </b> +48 73337 14 77<br /></h4>
-            <h4><b>Strona www:</b> <a href="http://www.therrax.pl">therrax.pl</a><br /></h4>
-            <h4><b>Kierunek:</b> Informatyka i Ekonometria</h4>
-        </div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h4 class="panel-title">BuisnessCard</h4>
     </div>
-    <hr/>
+    <div class="panel-body">
+        <h4><b>Imię i nazwisko:</b> Jerzy Kołakowski<br /></h4>
+        <h4><b>Adres email:</b> therrax@gmail.com<br /></h4>
+        <h4><b>Telefon: </b> +48 73337 14 77<br /></h4>
+        <h4><b>Strona www:</b> <a href="http://www.therrax.pl">therrax.pl</a><br /></h4>
+        <h4><b>Kierunek:</b> Informatyka i Ekonometria</h4>
+    </div>
+</div>
+<hr/>
 <h3>
     III. Połączenie z internetem
 </h3>
-    <button class="btn btn-lg btn-primary" type="button" onclick="networkInfo()" value="Network Informations">Sprawdź</button>
+<button class="btn btn-lg btn-primary" type="button" onclick="checkConnection()" value="Network Informations">Sprawdź</button>
 <hr />
-    <h3>
-     IV. Akcelerometr
-    </h3>
-    <button class="btn btn-lg btn-primary" type="button" onclick="startA()" value="Network Informations">Start</button>
+<h3>
+    IV. Akcelerometr
+</h3>
+
 <button class="btn btn-lg btn-primary" type="button" onclick="stopA()" value="Network Informations">Stop</button>
-    <h4 id="accelerometer">Naciśnij start, żeby włączyć akcelerometr</h4>
-    <hr />
+
+<hr />
 </body>
+
 </html>

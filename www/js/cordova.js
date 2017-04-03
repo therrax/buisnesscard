@@ -6,14 +6,13 @@ function init() {
 function onDeviceReady() {
     navigator.notification.beep(1);
 
-    function startA() {
-        var options = { frequency: 500 };  // Update every 3 seconds
+    var options = { frequency: 500 };  // Update every 3 seconds
 
-        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    }
-    function stopA() {
-        navigator.accelerometer.clearWatch(watchID);
-    }
+    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
+
+function stopA() {
+    navigator.accelerometer.clearWatch(watchID);
 }
 function deviceInfo() {
     info = 'Hi, I am your smartphone :-)' +
@@ -38,7 +37,7 @@ function checkConnection() {
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
 
-    alert('Connection type: ' + states[networkState]);
+    navigator.notification.alert('Connection type: ' + states[networkState]);
 }
 function onOnline() {
     navigator.notification.alert("Online");
@@ -48,14 +47,19 @@ function onOffline() {
 }
 function onSuccess(acceleration) {
     var accelerometer = document.querySelector("#accelerometer")
-    accelerometer.text = 'Acceleration X: ' + acceleration.x + '<br/>'
-          +
-          'Acceleration Y: ' + acceleration.y + '<br/>'
-          +
-          'Acceleration Z: ' + acceleration.z + '<br/>'
-          +
-          'Timestamp: ' + acceleration.timestamp + '<br/>'
-        ;
+    navigator.notification.alert('Acceleration X: ' +
+        acceleration.x +
+        '<br/>' +
+        'Acceleration Y: ' +
+        acceleration.y +
+        '<br/>' +
+        'Acceleration Z: ' +
+        acceleration.z +
+        '<br/>' +
+        'Timestamp: ' +
+        acceleration.timestamp +
+        '<br/>'
+    );
 }
 
 function onError() {
