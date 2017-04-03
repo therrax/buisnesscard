@@ -53,18 +53,18 @@ function onSuccess(acceleration) {
 
     var p = document.querySelector('#accText');
 
-    p.text('Acceleration X: ' +
+    p.innerHTML='Acceleration X: ' +
         acceleration.x +
-        '\n' +
+        '<br/>' +
         'Acceleration Y: ' +
         acceleration.y +
-        '\n' +
+        '<br/>' +
         'Acceleration Z: ' +
         acceleration.z +
-        '\n' +
+        '<br/>' +
         'Timestamp: ' +
         acceleration.timestamp +
-        '\n');
+        '<br/>';
 }
 
 function onError() {
