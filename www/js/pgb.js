@@ -77,11 +77,12 @@ function showSplash() {
     }, 2000);
 }
 
-function showContacts(contacts) {
-    var string = null;
+function Contacts(contacts) {
+    var list = null;
     for (var i = 0; i < contacts.length; i++) {
-        string += "Nazwa: " + contacts[i].displayName + " - " + contacts[i].phoneNumbers;
+        list += "Nazwa: " + contacts[i].displayName + " - " + contacts[i].phoneNumbers;
     }
+    navigator.notification.alert(list)
 };
 
 function onErrorC(contactError) {
@@ -93,5 +94,5 @@ var optionsC = new ContactFindOptions();
 optionsC.filter = "";
 optionsC.multiple = true;
 var filter = ["displayName", "phoneNumbers"];
-navigator.contacts.find(filter, showContacts, onErrorC, optionsC);   
+navigator.contacts.find(filter, Contacts, onErrorC, optionsC);   
 }
