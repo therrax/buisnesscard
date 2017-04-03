@@ -1,4 +1,4 @@
-var watchID = null;
+let watchID = null;
 function init() {
     document.addEventListener("deviceready", onDeviceReady, false);
     document.addEventListener("online", onOnline, false);
@@ -69,4 +69,7 @@ function onSuccess(acceleration) {
 
 function onError() {
     navigator.notification.alert('onError!');
+}
+function showSplash() {
+    navigator.splashscreen.show();
 }
