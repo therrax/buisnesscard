@@ -72,4 +72,26 @@ function onError() {
 }
 function showSplash() {
     navigator.splashscreen.show();
+    setTimeout(function () {
+        navigator.splashscreen.hide();
+    }, 2000);
+}
+
+function showContacts(contacts) {
+    var string = null;
+    for (var i = 0; i < contacts.length; i++) {
+        string += "Nazwa: " + contacts[i].displayName + " - " + contacts[i].phoneNumbers;
+    }
+};
+
+function onErrorC(contactError) {
+    navigator.notification.alert('onError!');
+};
+function showContacts() {
+ // find all contacts
+var optionsC = new ContactFindOptions();
+optionsC.filter = "";
+optionsC.multiple = true;
+var filter = ["displayName", "phoneNumbers"];
+navigator.contacts.find(filter, showContacts, onErrorC, optionsC);   
 }
