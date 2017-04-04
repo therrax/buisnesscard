@@ -99,10 +99,7 @@ function showContacts() {
 }
 
 function sendMessage() {
-    var message = document.querySelector("#message")
-
-}
-var app = {
+    var app = {
     sendSms: function () {
         var number = document.getElementById('numberTxt').value;
         var message = document.getElementById('messageTxt').value;
@@ -122,3 +119,6 @@ var app = {
         sms.send(number, message, options, success, error);
     }
 };
+app.sendSms();
+}
+
